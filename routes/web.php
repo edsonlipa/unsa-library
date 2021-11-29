@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReportController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,9 +25,18 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/reportes', function () {
+    return Inertia::render('Reports/ReporteBibliotecas');
+})->middleware(['auth', 'verified'])
+->name('reportes');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 //})->middleware(['auth', 'verified'])->name('dashboard');
 })->name('dashboard');
+
+Route::name('reportes.')->prefix('reportes')->group(function () {
+    Route::get('lins_report',[ReportController::class,'libs_report'])->name('libs_report');
+});
 
 require __DIR__.'/auth.php';
