@@ -27,13 +27,11 @@ Route::get('/', function () {
 
 Route::get('/reportes', function () {
     return Inertia::render('Reports/ReporteBibliotecas');
-})->middleware(['auth', 'verified'])
-->name('reportes');
+})->middleware(['auth', 'verified'])->name('reportes');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
-})->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::name('reportes.')->prefix('reportes')->group(function () {
     Route::get('lins_report',[ReportController::class,'libs_report'])->name('libs_report');

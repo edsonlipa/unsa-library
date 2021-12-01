@@ -12,11 +12,11 @@
 
         <!-- Tailwind css -->
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
 
         <!-- Scripts -->
         @routes
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ asset(mix('js/app.js')) }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         @inertia
