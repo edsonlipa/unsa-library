@@ -10,6 +10,6 @@ class Legis extends Model
     use HasFactory;
 
     protected $connection = 'pgsql_legis';
-    protected $table = 'users';
+    protected $table = 'account';
 
 }
