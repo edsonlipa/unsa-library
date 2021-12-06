@@ -15,4 +15,8 @@ class Matriculas21 extends Model
     {        
         return $this->belongsTo(Alumno::class, 'cui', 'cui');
     }
+    public function escuela()
+    {        
+        return $this->belongsTo(Escuela::class, 'nues', 'nues');
+    }
 }

@@ -11,5 +11,16 @@ class Legis extends Model
 
     protected $connection = 'pgsql_legis';
     protected $table = 'account';
+    
+    protected $primaryKey = null;
+    public $incrementing = false;
+    // public function alumno_email()
+    // {        
+
+    //     $parts_email = explode('@', $this->email);
+    //     $first_email = current($parts_email);     
+
+    //     return $this->belongsTo(AlumnoEmail::class, 'cui', 'cui');
+    // }
 
 }

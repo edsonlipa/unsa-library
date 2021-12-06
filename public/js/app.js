@@ -20857,9 +20857,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     dowload_report: function dowload_report() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get(route(this.route_name)).then(function (response) {
-        console.log(response.data);
-      });
+      window.open(route(this.route_name)); // axios.get(route(this.route_name))
+      // .then((response)=>{
+      //     console.log(response.data)    
+      // })
     }
   }
 });

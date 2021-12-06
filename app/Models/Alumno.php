@@ -20,5 +20,10 @@ class Alumno extends Model
     {
         return $this->hasMany(Matriculas21::class, 'cui', 'cui');
     }
+    public function primera_matricula_21()
+    {
+        return $this->belongsTo(Matriculas21::class, 'cui', 'cui');
+    }
+    
 
 }

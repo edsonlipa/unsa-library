@@ -24,10 +24,11 @@ export default {
     },
     methods:{
         dowload_report(){
-            axios.get(route(this.route_name))
-            .then((response)=>{
-                console.log(response.data)    
-            })
+            window.open(route(this.route_name));
+            // axios.get(route(this.route_name))
+            // .then((response)=>{
+            //     console.log(response.data)    
+            // })
         }
     }
 
