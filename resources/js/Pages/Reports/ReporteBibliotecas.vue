@@ -16,8 +16,8 @@
                     </div>
                 </div>
             </div>
-            <report-database name_database="libs" route_name="reportes.libs_report"/>
-            <report-database name_database="second" route_name="reportes.libs"/>
+            <report-database name_database="Libs" route_name="reportes.libs_report"/>
+            <report-database name_database="Libaeds" route_name="reportes.libaeds_report"/>
             <report-database name_database="thirt" route_name="reportes.libs"/>
             <report-database name_database="fourth" route_name="reportes.libs"/>
         </div>

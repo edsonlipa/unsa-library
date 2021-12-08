@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     props: ['name_database','route_name'],
     mounted() {
@@ -24,11 +23,7 @@ export default {
     },
     methods:{
         dowload_report(){
-            window.open(route(this.route_name));
-            // axios.get(route(this.route_name))
-            // .then((response)=>{
-            //     console.log(response.data)    
-            // })
+            window.open(route(this.route_name),"_blank");
         }
     }
 

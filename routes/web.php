@@ -34,7 +34,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::name('reportes.')->prefix('reportes')->group(function () {
-    Route::get('lins_report',[ReportController::class,'libs_report'])->name('libs_report');
+    Route::get('libs_report',[ReportController::class,'libs_report'])->name('libs_report');
+    Route::get('libaeds_report',[ReportController::class,'libaeds_report'])->name('libaeds_report');
+    // Route::get('lins_report',[ReportController::class,'libs_report'])->name('libs_report');
+    // Route::get('lins_report',[ReportController::class,'libs_report'])->name('libs_report');
 });
 
 require __DIR__.'/auth.php';

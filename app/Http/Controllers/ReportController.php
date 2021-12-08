@@ -14,20 +14,21 @@ class ReportController extends Controller
 {
     public function libs_report()
     {
-        $account_legis = Legis::all();
+        //$account_legis = Legis::all();
         // foreach($account_legis as $user){
         //     //\Log::debug(["id"=>$user->id,"user name"=>$user->names]);
         // }
 //        return (new LibraryExport)->download('libs_report.xlsx');
+        \Log::debug(["iduser name"=>"nothing"]);
 
         return Excel::download(new LibraryExport, 'libs_report.xlsx');
 
     }
     public function libaeds_report()
     {
-        $users_legis = Legis::all();
+        $users_legis = LibaedsAccess::all();
         foreach($users_legis as $user){
-            //\Log::debug(["id"=>$user->id,"user name"=>$user->names]);
+            \Log::debug(["id"=>$user->id,"user name"=>$user->names]);
         }
         return count($users_legis);
     }
