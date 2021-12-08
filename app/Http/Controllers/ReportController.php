@@ -11,20 +11,16 @@ use App\Models\LibeurekaAccess;
 use App\Models\LibeuromonitorAccess;
 use App\Models\McgrawhillAccess;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\LibraryExport;
-
-
-
+use App\Exports\LegisReportExport;
 
 class ReportController extends Controller
 {
     public function libs_report()
     {
-        
         \Log::debug(["iduser name"=>"nothing"]);
-        return Excel::download(new LibraryExport, 'libs_report.xlsx');
-
+        return Excel::download(new LegisReportExport, 'libs_report.xlsx');
     }
+
     public function libaeds_report()
     {
         $users_legis = LibaedsAccess::all();
