@@ -18,8 +18,11 @@
             </div>
             <report-database name_database="Libs" route_name="reportes.libs_report"/>
             <report-database name_database="Libaeds" route_name="reportes.libaeds_report"/>
-            <report-database name_database="thirt" route_name="reportes.libs"/>
-            <report-database name_database="fourth" route_name="reportes.libs"/>
+            <report-database name_database="Libcengage" route_name="reportes.libcengage_report"/>
+            <report-database name_database="Libcimabook" route_name="reportes.libcimabook_report"/>
+            <report-database name_database="libeureka" route_name="reportes.libeureka_report"/>
+            <report-database name_database="libeuromonitor" route_name="reportes.libeuromonitor_report"/>
+            <report-database name_database="mcgrawhill" route_name="reportes.mcgrawhill_report"/>
         </div>
     </BreezeAuthenticatedLayout>
 </template>

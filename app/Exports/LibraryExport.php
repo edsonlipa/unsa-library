@@ -31,14 +31,14 @@ class LibraryExport implements FromCollection,WithHeadings//FromQuery
                     }
                 }
             }
-            Log::debug(["account"=>$user]);
+            \Log::debug(["account"=>$user]);
         }
         return $account_legis;
     }
 
     public function headings(): array
     {
-        return ["APELLIDOS", "NOMBRES", "CORREOUNSA", "DNI", "CELULAR", "CORREOPERSONAL","SALON","SALON","SALON"];
+        return [ "NOMBRES", "APELLIDOS", "CORREOUNSA", "DNI", "CREATED","UPDATED","CARRERA CON MATRICULA ACTIVA"];
     }
    
 }
