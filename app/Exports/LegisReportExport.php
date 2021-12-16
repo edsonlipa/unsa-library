@@ -31,14 +31,13 @@ class LegisReportExport implements FromCollection,WithHeadings//FromQuery
                     }
                 }
             }
-            \Log::debug(["account"=>$user]);
         }
         return $account_legis;
     }
 
     public function headings(): array
     {
-        return [ "NOMBRES", "APELLIDOS", "CORREOUNSA", "CREATED","UPDATED", "DNI","CUI","CARRERA CON MATRICULA ACTIVA"];
+        return [ "NOMBRES", "APELLIDOS", "CORREOUNSA", "CREATED","UPDATED","CUI", "DOCUMENTO","CARRERA CON MATRICULA ACTIVA"];
     }
    
 }

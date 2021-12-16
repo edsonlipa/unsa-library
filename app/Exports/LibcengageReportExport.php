@@ -2,7 +2,8 @@
 
 namespace App\Exports;
 
-use App\Models\Legis;
+use App\Models\LibcengageAccess;
+
 use App\Models\AlumnoEmail;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;
@@ -10,12 +11,12 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithTitle;
 
 
-class LibaedsReportExport implements FromCollection,WithHeadings//FromQuery 
+class LibcengageReportExport implements FromCollection,WithHeadings//FromQuery 
 {
 
     public function collection()
     {
-        $account_legis = Legis::select('first_name', 'last_name', 'email', 'created_on', 'updated_on')->get();
+        $account_legis = LibcengageAccess::select('first_name', 'last_name', 'email', 'created_on', 'updated_on')->get();
         foreach($account_legis as $user){
             $parts_email = explode('@', $user->email);
             $first_email = current($parts_email);     
@@ -31,14 +32,13 @@ class LibaedsReportExport implements FromCollection,WithHeadings//FromQuery
                     }
                 }
             }
-            \Log::debug(["account"=>$user]);
         }
         return $account_legis;
     }
 
     public function headings(): array
     {
-        return [ "NOMBRES", "APELLIDOS", "CORREOUNSA", "CREATED","UPDATED", "DNI","CUI","CARRERA CON MATRICULA ACTIVA"];
+        return [ "NOMBRES", "APELLIDOS", "CORREOUNSA", "CREATED","UPDATED","CUI", "DOCUMENTO","CARRERA CON MATRICULA ACTIVA"];
     }
    
 }
