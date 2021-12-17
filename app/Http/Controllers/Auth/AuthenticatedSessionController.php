@@ -56,4 +56,11 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+    public function create_google()
+    {
+        return Inertia::render('Auth/LoginWithGoogle', [
+            'canResetPassword' => Route::has('password.request'),
+            'status' => session('status'),
+        ]);
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\LogInWithGoogleController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -42,5 +43,9 @@ Route::name('reportes.')->prefix('reportes')->middleware(['auth', 'verified'])->
     Route::get('libeuromonitor_report',[ReportController::class,'libeuromonitor_report'])->name('libeuromonitor_report');
     Route::get('mcgrawhill_report',[ReportController::class,'mcgrawhill_report'])->name('mcgrawhill_report');
 });
+
+
+Route::get('/google', [LogInWithGoogleController::class, 'redirectToGoogle'])->name('google');
+Route::get('/google/callback', [LogInWithGoogleController::class, 'handleGoogleCallback']);
 
 require __DIR__.'/auth.php';
